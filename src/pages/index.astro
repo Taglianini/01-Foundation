@@ -1,18 +1,18 @@
 ---
+import MainLayout from "../Layouts/MainLayout.astro"
 const name = "Tagliani Tomás Alejandro"
-const title = "Tagliani Web"
 ---
-
-<html lang="es">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
+<MainLayout title = "Home">
 	<body>
 		<h1>Curso Astro</h1>
+
 		<p>Momento actual: {new Date().toLocaleTimeString()}</p>
+		<p id="current-time">Momento actual real: </p>
+
+
+		<script>
+			const currentTimeParagraph = document.querySelector("#current-time") as HTMLParagraphElement;
+			currentTimeParagraph.innerText = `Momento actual real: ${new Date().toLocaleTimeString()}`;
+		 </script>
 	</body>
-</html>
+</MainLayout> 	
